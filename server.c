@@ -129,6 +129,7 @@ int main(int argc, char *argv[])
     if (bind(sockfd, (struct sockaddr *) &serv_addr,
               sizeof(serv_addr)) < 0) 
               error("ERROR on binding");
+    printf("Server running!\n");
     listen(sockfd,10);
     newsockfd = accept(sockfd, (struct sockaddr*)&cli_addr,&clilen);
     SendAllFilesToClient(newsockfd);
